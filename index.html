@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://nicolas.github.io/normalize.css/8.0.1/ormalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Form validation with JavaScript</title>
+</head>
+<body>
+    <main>
+        <form action="" class="form" id="form">
+
+            <!-- Group: UserName -->
+            <div class="form__grupo" id="group__user">
+                <label for="user" class="form_label">User</label>
+                <div class="form__grupo-input">
+                    <input type="text" class="form__input" name="user" id="user" placeholder="UserName123">
+                    <i class="fas fa-times-circle form__validacion-estado"></i>
+                </div>
+                <p class="form__input-error">The username must be from 4 to 16 characters and only must contain numbers, letters and underscore.</p>
+            </div>
+
+            <!-- Group: Name -->
+            <div class="form__grupo" id="group__name">
+                <label for="name" class="form_label">Name</label>
+                <div class="form__grupo-input">
+                    <input type="text" class="form__input" name="name" id="name" placeholder="John Doe">
+                    <i class="fas fa-times-circle form__validacion-estado"></i>
+                </div>
+                <p class="form__inpur-error">The name must be from 4 to 16 characters and only must contain numbers, letters and underscore.</p>
+            </div>
+
+            <!-- Group: Password -->
+            <div class="form__grupo" id="group__password">
+                <label for="password" class="form_label">Password</label>
+                <div class="form__grupo-input">
+                    <input type="password" class="form__input" name="password" id="password" placeholder="************">
+                    <i class="fas fa-times-circle form__validacion-estado"></i>
+                </div>
+                <p class="form__input-error">The Password must have 4 to 12 digits.</p>
+            </div>
+
+            <!-- Group: Second Password -->
+            <div class="form__grupo" id="grupo__password2">
+                <label for="password2" class="form_label">Repeat password</label>
+                <div class="form__grupo-input">
+                    <input type="password" class="form__input" name="password2" id="password2" placeholder="************">
+                    <i class="fas fa-times-circle form__validacion-estado"></i>
+                </div>
+                <p class="form__input-error">Both passwords must be the same.</p>
+            </div>
+
+            <!-- Group: Email -->
+            <div class="form__grupo" id="group__email">
+                <label for="email" class="form_label">Email</label>
+                <div class="form__grupo-input">
+                    <input type="email" class="form__input" name="email" id="email" placeholder="user@company.com">
+                    <i class="fas fa-times-circle form__validacion-estado"></i>
+                </div>
+                <p class="form__input-error">The email must contain letters, numbers and underscore.</p>
+            </div>
+
+            <!-- Group: Telephone -->
+            <div class="form__grupo" id="group__telephone">
+                <label for="telephone" class="form_label">Telephone</label>
+                <div class="form__grupo-input">
+                    <input type="text" class="form__input" name="telephone" id="telephone" placeholder="1234567891">
+                    <i class="fas fa-times-circle form__validacion-estado"></i>
+                </div>
+                <p class="form__input-error">The telephone must contain only numbers and 14 digits max.</p>
+            </div>
+
+            <!-- Group: Terms & conditions -->
+            <div class="form__grupo" id="group__terms">
+                <label class="form_label">
+                    <input type="checkbox" class="form__checkbox" name="terms" id="terms">
+                    Accept the Terms and Conditions.
+                </label>
+            </div>
+
+            <div class="form__mensaje" id="form__message">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill the form inputs correctly.</p>
+            </div>
+
+            <div class="form__grupo form__grupo-btn-enviar">
+                <button type="submit" class="form__btn">Register</button>
+                <p class="form__mensaje-exito" id="form__message-success">The form data was sent successfully.</p>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="form.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymus"></script>
+</body>
+</html>
