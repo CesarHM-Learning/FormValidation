@@ -1,18 +1,168 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto' sans-serif;
-    background: #e5e5e5;
+  font-family: "Roboto" sans-serif;
+  background: #e5e5e5;
 }
 
 main {
+  /*border-style: solid; /*to_delete*/
 
-    /*border-style: solid; /*to_delete*/
-    
-    max-width: 800px;
-    width: 90%;
-    margin: auto;
-    padding: 40 px;
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  padding: 40 px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Hace que los elementos del tag 'form' esten en 2 columnas */
+  gap: 20px; /* Agrega espaciado entre los objetos del tag 'form' */
+}
+
+.form_label {
+  display: block; /* Es para que abarque el 100% */
+  font-weight: 700; /* Fuente en negritas */
+  padding: 10px; /* Agrega espaciado en los lados de fuera de los 'Labels */
+  cursor: pointer; /* Cambia el aspecto del cursor del raton para que se muestre como un enlace */
+}
+
+.form_group_input {
+  position: relative;
+}
+
+.form_input {
+  width: 100%; /* Hace que abarque todo el ancho posible */
+  background: #fff; /* Pone el color de fondo del elemento */
+  border: 3px solid transparent; /* Pone el borde del elemento de 3px y de color transparente */
+  border-radius: 5px; /* Quita las esquinas */
+  height: 45px; /* Pone la propiedad 'height' de un ancho de 45px */
+  line-height: 45px; /* Pone el texto centrado deacuerdo al ancho del textbox */
+  padding: 0 40px 0 10px; /* */
+  transition: 0.3s ease all; /* */
+}
+
+.form_input:focus {
+  border: 3px solid #0075ff; /*Cambia el color de borde el elemento 'input'*/
+  outline: none; /* Quita un borde que agregan los navegadores */
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4); /* agrega una sombra al elemento*/
+}
+
+.form_input_error {
+  font-size: 12px; /* Pone el texto mas pequeño */
+  margin-bottom: 0; /* Pone el borde de abajo en 0px */
+  display: none; /* Oculta el elemento, por default tiene que estar invisible */
+}
+
+.form_input_error_active {
+  display: block;
+}
+
+.form_validation_estate {
+  position: absolute;
+  right: 10px; /* Pone el elemento de derecha a izquierda */
+  bottom: 14px; /* Desplaza el elemento hacia abajo 15px */
+  z-index: 100; /* Pone el elemento encima de todos los otros elementos */
+  font-size: 16px; /* */
+  opacity: 0; /* Oculta el elemento */
+}
+
+.form_checkbox {
+  margin-right: 10px; /* Agrega un margen a la derecha del elemento de 10px */
+}
+
+.form_group_terms,
+.form_message,
+.form_group_send_button {
+  grid-column: span 2; /* Hace que los elementos abarquen 2 columnas*/
+}
+
+.form_message {
+  height: 45px; /* Pone la propiedad 'Height' de 45px*/
+  line-height: 45px; /* Pone la propiedad 'Height' del texto en 45px */
+  background: #f66060; /* Pone la propiedad 'background' en un colos en especifico */
+  padding: 0 15px;
+  border-radius: 5px; /* Pone los bordes redondeados en 5px*/
+  display: none; /* Oculta el elemento*/
+}
+
+.form_message_activ {
+  display: block; /* Muestra el elemento */
+}
+
+.form_message p {
+  margin: 0; /* Pone la propiedad 'margin' de elemento 'p' en cero */
+}
+
+.form_group_send_button {
+  display: flex; /* */
+  flex-direction: column; /* Organiza los elementos del grupo que se muestren en columnas*/
+  align-items: center; /* Alinea los elementos en el centro */
+}
+
+.form_button {
+  height: 45px; /* Pone la propiedad 'Height' de 45 px */
+  line-height: 45px; /* Pone la propiedad 'Height' del texto del boton en 45px, para centrar el texto */
+  width: 30%; /* Pone la propiedad 'width' al 30% del ancho del contenedor */
+  background: #000; /* Pone la propiedad 'background' (color de fondo) en color negro */
+  color: #fff; /* Pone la propiedad 'color' del texto en blanco */
+  font-weight: bold; /* Pone en negrita el texto del boton */
+  border: none; /* Quita el borde */
+  border-radius: 5px; /* Redondea las esquinas del boton */
+  cursor: pointer; /* Modifica el cursor del raton para hacerlo parecer un enlace */
+  transition: 0.1s ease all;
+}
+
+.form_button:hover {
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 1); /* Agrega una sombra a pasar encima del boton */
+}
+
+.form_message_success {
+  font-size: 14px; /* Modifica el tamaño del texto */
+  color: #119200; /* Camba el color del texto */
+  display: none; /* Oculta el texto */
+}
+
+.form_message_success_activ {
+  display: block; /* Muestra el texto, despues de tener el tipo 'display: none' */
+}
+
+/* Validation */
+.form_group_correct .form_validation_estate {
+  /* Actualiza el color a verde del icono cuando se tienen estas clases */
+  color: #1ed12d; /* Cambia el color del icono */
+  opacity: 1; /* Muestra el icono */
+}
+
+.form_group_incorrect .form_validation_estate {
+  /* Actualiza el color a rojo del icono cuando se tienen estas clases */
+  color: #bb2929;
+  opacity: 1;
+}
+
+.form_group_incorrect .form_label {
+  color: #bb2929; /* Modifica el color de la etiqueta*/
+}
+
+.form_group_incorrect .form_input {
+  border: 3px solid #bb2929; /* Modifica el color del borde de la caja de texto */
+}
+
+/* Medi@queries */
+@media screen and (max-width: 812px) {
+  .form {
+    grid-template-columns: 1fr; /* Cambia el total de columnas a una sola columna */
+  }
+
+  .form_group_terms,
+  .form_message,
+  .form_group_send_button {
+    grid-column: 1; /* Hace que los elementos abarquen a columna*/
+  }
+
+  .form_button {
+      width: 100%; /* Ajusta el ancho del boton a un 100% del elemento contenedor */
+  }
 }
